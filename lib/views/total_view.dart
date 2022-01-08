@@ -4,7 +4,7 @@ class TotalView extends StatelessWidget {
   TotalView({Key? key}) : super(key: key);
 
   final int _totalCost = AppData.getTotalCost();
-  final int _height = 100;
+  final double _height = 100;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class TotalView extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         padding: EdgeInsets.all(4.0),
-
+        height: _height,
         child: Align(
           alignment: Alignment.center,
           child: Text("Total Expense: $_totalCost",
@@ -25,7 +25,7 @@ class TotalView extends StatelessWidget {
         ),
         decoration: BoxDecoration(
             border: Border.all(),
-            color: Colors.brown,
+            color: Colors.black54,
             borderRadius: BorderRadius.all(Radius.circular(_height/4))
         ),
       ),

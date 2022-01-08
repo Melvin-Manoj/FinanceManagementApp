@@ -13,9 +13,13 @@ class AppData {
     Item(data: "paper" , price: 70),
     Item(data: "dettol", price: 501),
     Item(data: "tables" , price: 7770),
+    Item(data: "petrol", price: 1000),
+    Item(data: "cookies" , price: 60),
   ];
   static late SharedPreferences _sharedPreferences;
   static late List<String> _jsonItemList = [];
+
+  static getItemAt(int index) => _itemList[index].getData();
 
   static getTotalCost(){
     int _total = 0;
@@ -40,6 +44,14 @@ class AppData {
   static Future<void> addEvent(event) async {
     _itemList.add(event);
     _jsonItemList.add(jsonEncode(event));
+
+    await _sharedPreferences.setStringList('purchaseList', _jsonItemList);
+  }
+  //latest feature added to remove an element 1:36
+
+  static Future<void> deleteEvent(int index) async {
+    _itemList.removeAt(index);
+    _jsonItemList.removeAt(index);
 
     await _sharedPreferences.setStringList('purchaseList', _jsonItemList);
   }

@@ -20,12 +20,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
-  void _navigateToAddScreen(){
-    print("hello");
-    Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (BuildContext context) => const AddItem()));
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

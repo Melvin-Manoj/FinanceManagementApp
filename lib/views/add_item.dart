@@ -60,6 +60,7 @@ class _AddItemState extends State<AddItem> {
                   ),
                   child: TextFormField(
                     cursorColor: Colors.black,
+                    keyboardType: TextInputType.number,
                     decoration: const InputDecoration(
                       hintText: 'price',
                     ),
