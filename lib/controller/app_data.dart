@@ -29,7 +29,7 @@ class AppData {
   static Future<void> initEvent() async {
     _sharedPreferences = await SharedPreferences.getInstance();
 
-    final _tempJsonEventList = _sharedPreferences.getStringList('todoList');
+    final _tempJsonEventList = _sharedPreferences.getStringList('purchaseList');
 
     if(_tempJsonEventList != null){
       _jsonItemList = _tempJsonEventList;
