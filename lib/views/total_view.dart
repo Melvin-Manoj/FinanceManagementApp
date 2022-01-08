@@ -1,7 +1,9 @@
 import 'package:finance_app/controller/app_data.dart';
 import 'package:flutter/material.dart';
 class TotalView extends StatelessWidget {
-  TotalView({Key? key}) : super(key: key);
+  TotalView({
+    Key? key
+  }) : super(key: key);
 
   final int _totalCost = AppData.getTotalCost();
   final double _height = 100;
