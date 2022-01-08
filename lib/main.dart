@@ -20,13 +20,19 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  refresh(){
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: "finance app",
       home: Scaffold(
         appBar: AppBar(
           elevation: 0.5,
+          centerTitle: true,
           title: const Text(
             "FinanceApp",
             style: TextStyle(
@@ -39,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         body: Column(
           children: [
             TotalView(),
-            Expanded(child: ItemListView()),
+            Expanded(child: ItemListView(notifyParent: refresh,)),
           ],
         ),
         floatingActionButton: const AddItemFAB(),

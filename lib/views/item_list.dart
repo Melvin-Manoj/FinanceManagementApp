@@ -3,7 +3,11 @@ import 'package:finance_app/views/item_view.dart';
 import 'package:flutter/material.dart';
 
 class ItemListView extends StatefulWidget {
-  const ItemListView({Key? key}) : super(key: key);
+  Function() notifyParent;
+  ItemListView({
+    required this.notifyParent,
+    Key? key
+  }) : super(key: key);
 
   @override
   _ItemListViewState createState() => _ItemListViewState();
@@ -105,7 +109,7 @@ class _ItemListViewState extends State<ItemListView> {
                                 print("deleted the item ${AppData.getItemAt(
                                     index)}");
                                 setState(() {
-
+                                  widget.notifyParent();
                                   AppData.deleteEvent(index);
                                 });
                                 print("set state ended");
